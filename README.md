@@ -3,9 +3,6 @@
 Cette stack Drupal tourne sous Docker.
 La documentation ci-dessous vous propose de le faire [avec WSL](#documentation-en-utilisant-wsl) ou [sans WSL](#documentation-sans-utiliser-wsl).
 
-Pour de meilleurs performances partagez uniquement les dossiers utilisés sur Docker Desktop :
-![Shared file](./shared_files.png)
-
 # Documentation (en utilisant WSL)
 
 * Docker4drupal => https://wodby.com/docs/stacks/drupal/containers/
