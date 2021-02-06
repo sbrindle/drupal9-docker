@@ -3,10 +3,7 @@
 Cette stack Drupal tourne sous Docker.
 La documentation ci-dessous vous propose de le faire [avec WSL](#documentation-en-utilisant-wsl) ou [sans WSL](#documentation-sans-utiliser-wsl).
 
-Il se peut que l'anti-virus pose des problèmes d'accès à vos fichiers partagés. Afin d'éviter que cela arrive,
-il est conseillé de mettre votre répertoire de travail dans `C:\sources\` ( répertoire exclu par l'anti-virus).
-
-Et pour de meilleurs performances partagez uniquement les dossiers utilisés sur Docker Desktop :
+Pour de meilleurs performances partagez uniquement les dossiers utilisés sur Docker Desktop :
 ![Shared file](./shared_files.png)
 
 # Documentation (en utilisant WSL)
