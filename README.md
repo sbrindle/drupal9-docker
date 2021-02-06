@@ -15,7 +15,7 @@ La documentation ci-dessous vous propose de le faire [avec WSL](#documentation-e
 
 La configuration de la stack est définie dans le fichier `.env`
 
-* Si vous déployez sur une machine qui possède déjà un naming DNS, modifiez le paramètre `PROJECT_BASE_URL=drupal9.localhost`
+* Si vous déployez sur une machine qui possède déjà un naming DNS, modifiez le paramètre `PROJECT_BASE_URL=drupal9.local`
 
 ### Lancer les conteneurs :
 
@@ -40,10 +40,10 @@ Dans le fichier `C:\Windows\System32\drivers\etc\hostss`
 
 Ajouter la ligne :
 ```
-127.0.0.1 drupal9.localhost
+127.0.0.1 drupal9.local
 ```
 
-### Accéder à http://drupal9.localhost/
+### Accéder à http://drupal9.local/
 
 # Documentation (sans utiliser WSL)
 
@@ -75,10 +75,10 @@ Dans le fichier `C:\Windows\System32\drivers\etc\hostss`
 
 Ajouter la ligne :
 ```
-127.0.0.1 drupal9.localhost
+127.0.0.1 drupal9.local
 ```
 
-### Accéder à http://drupal9.localhost/
+### Accéder à http://drupal9.local/
 
 # Debug
 

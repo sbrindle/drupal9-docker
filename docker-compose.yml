@@ -1,7 +1,7 @@
 version: "3"
 
 services:
-# -------------------------  Stack ----------------- 
+# -------------------------  Stack -----------------
   mariadb:
     image: wodby/mariadb:$MARIADB_TAG
     container_name: "${PROJECT_NAME}_mariadb"
@@ -56,11 +56,11 @@ services:
 #      SIMPLETEST_DB: "${DB_DRIVER}://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}#tests_"
 #      MINK_DRIVER_ARGS_WEBDRIVER: '["chrome", {"browserName":"chrome","goog:chromeOptions":{"args":["--disable-gpu","--headless"]}}, "http://chrome:9515"]'
     volumes: # map only custom directory for better performance
-      - docroot:/var/www/html/web:cached
-      - ./web/modules/custom:/var/www/html/web/modules/custom
-      - ./web/themes/custom:/var/www/html/web/themes/custom
-      - ./web/sites:/var/www/html/web/sites
-      - ./web/profiles/custom:/var/www/html/web/profiles/custom
+      - ./vendor:/var/www/html/vendor:cached
+      - ./web:/var/www/html/web:cached
+      - ./web/modules/custom:/var/www/html/web/modules/custom:consistent
+      - ./web/themes/custom:/var/www/html/web/themes/custom:consistent
+      - ./web/profiles/custom:/var/www/html/web/profiles/custom:consistent
       - ./composer.json:/var/www/html/composer.json
       - ./composer.lock:/var/www/html/composer.lock
 ## Alternative for macOS users: docker-sync https://wodby.com/docs/stacks/drupal/local#docker-for-mac
@@ -75,7 +75,8 @@ services:
       CRONTAB: "0 * * * * drush -r /var/www/html/web cron"
     command: sudo -E LD_PRELOAD=/usr/lib/preloadable_libiconv.so crond -f -d 0
     volumes:
-      - docroot:/var/www/html/web:cached
+      - ./vendor:/var/www/html/vendor:cached
+      - ./web:/var/www/html/web:cached
 
   nginx:
     image: wodby/nginx:$NGINX_TAG
@@ -90,9 +91,9 @@ services:
       NGINX_VHOST_PRESET: $NGINX_VHOST_PRESET
 #      NGINX_DRUPAL_FILE_PROXY_URL: http://example.com
     volumes:
-      - docroot:/var/www/html/web:cached
-      - ./web/sites:/var/www/html/web/sites
-      - ./web/themes/custom:/var/www/html/web/themes/custom
+      - ./vendor:/var/www/html/vendor:cached
+      - ./web:/var/www/html/web:cached
+      - ./web/themes/custom:/var/www/html/web/themes/custom:consistent
 ## Alternative for macOS users: docker-sync https://wodby.com/docs/stacks/drupal/local#docker-for-mac
 #      - docker-sync:/var/www/html
     labels:
@@ -193,8 +194,8 @@ services:
 #      - ./:/var/www/html
 #    command: sh -c 'yarn install && yarn run start'
 
-# -------------------------  Dev Tools ----------------- 
- 
+# -------------------------  Dev Tools -----------------
+
   mailhog:
     image: mailhog/mailhog
     container_name: "${PROJECT_NAME}_mailhog"
@@ -296,7 +297,6 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
 
 volumes:
-  docroot:
   database:
 ## Docker-sync for macOS users
 #  docker-sync:
