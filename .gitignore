@@ -25,3 +25,6 @@ web/sites/default/default.services.yml
 web/sites/default/files
 .editorconfig
 .gitattributes
+
+# Ignore custom modules (have personal Git repository).
+web/modules/custom
