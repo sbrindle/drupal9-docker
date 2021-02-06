@@ -1,0 +1,14 @@
+{
+  "name": "locations",
+  "version": "1.0.0",
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^7.18.0",
+    "eslint-config-drupal": "^5.0.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.com:die-drupal/site/locations.git"
+  },
+  "license": "ISC"
+}
