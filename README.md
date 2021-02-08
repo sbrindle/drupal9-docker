@@ -108,6 +108,14 @@ git commit -nm "Mon message de commit"
 git commit -m "Mon message de commit" --no-verify
 ```
 
+## PHPCS
+
+Il est possible d'exécuter manuellement PHPCS à l'aide de la commande suivante :
+
+```sh
+phpcs --standard=Drupal --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md,yml --ignore=node_modules,bower_components,vendor web/modules/custom web/profiles/custom web/themes/custom
+```
+
 ## ESlint
 Les linters JS n'étant pas inclus dans le precommit, vous pouvez les tester manuellement avant de commit.
 
