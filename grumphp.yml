@@ -17,7 +17,7 @@ parameters:
         './web/themes/custom'
       ]
     phpcs:
-      standard: Drupal
+      standard: [Drupal, DrupalPractice]
       ignore_patterns:
         - .github
         - .gitlab
