@@ -10,6 +10,9 @@ vendor
 # Ignore node modules
 node_modules
 
+# Ignore tests
+simpletest
+
 # Ignore drupal core & modules contrib
 web/.htaccess
 web/autoload.php
@@ -23,6 +26,7 @@ web/libraries
 web/sites/default/default.settings.php
 web/sites/default/default.services.yml
 web/sites/default/files
+web/sites/**/settings.local.php
 .editorconfig
 .gitattributes
 
